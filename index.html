@@ -69,7 +69,7 @@
 
     .hero {
       text-align: center;
-      padding: 40px 30px 80px;
+      padding: 120px 30px 80px;
       background: linear-gradient(to right, #dfe9f3, #ffffff);
       position: relative;
     }
@@ -82,6 +82,12 @@
       border: 4px solid var(--main-color);
       margin-top: -80px;
       background-color: white;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
     }
 
     .hero h1 {
@@ -199,7 +205,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="logo">Bhavya Sri</div>
     <nav>
@@ -210,26 +215,22 @@
     </nav>
   </header>
 
-  <!-- Cover Photo -->
-  <img src="cover.jpg" alt="Cover Banner" class="cover-photo">
+  <img src="cover.jpg" alt="Cover Banner" class="cover-photo" onerror="this.style.display='none'">
 
-  <!-- Hero -->
   <section class="hero">
     <img src="bhavya.jpg" alt="C P Bhavya Sri" class="profile-pic">
     <h1>Hi, I'm C P Bhavya Sri</h1>
-    <p><span id="typing-text"></span></p>
+    <p>Cloud & AI Enthusiast</p>
     <a href="#projects" class="btn">View Projects</a>
     <a href="https://github.com/Bhavya-Sri26/Bhavya-Sri26" class="btn" target="_blank">GitHub</a>
     <a href="BhavyaSri_Resume.pdf" class="btn" download>Download Resume</a>
   </section>
 
-  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
     <p>I’m a B.Tech CSE student (2021–2025) with a CGPA of 9.39. I have experience in Machine Learning, AI, Cloud Computing, and web development. I hold certifications in Project Management, Java, ML, and Cloud. I've led academic projects like H1N1 Vaccine Analysis and EHR Blockchain Security.</p>
   </section>
 
-  <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills-grid">
@@ -240,7 +241,6 @@
     </div>
   </section>
 
-  <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects-grid">
@@ -262,47 +262,16 @@
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
     <p class="contact-links">Email: <a href="mailto:bhavyasrichintha65@gmail.com">bhavyasrichintha65@gmail.com</a></p>
     <p class="contact-links">Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
     <p class="contact-links">LinkedIn: <a href="https://linkedin.com/in/bhavyasri-jd" target="_blank">linkedin.com/in/bhavyasri-jd</a></p>
-    <p class="contact-links">Portfolio QR:</p>
-    <img src="qr.png" alt="QR Code to Portfolio" width="150" style="margin: 10px auto; display:block;">
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 C P Bhavya Sri. All rights reserved.</p>
   </footer>
-
-  <!-- Typing Animation Script -->
-  <script>
-    const roles = ["Software Developer", "Cloud & AI Enthusiast", "Web Developer", "ML Engineer"];
-    let i = 0, j = 0, current = "", isDeleting = false, speed = 100;
-
-    function type() {
-      const element = document.getElementById("typing-text");
-      if (i < roles.length) {
-        current = roles[i];
-        if (!isDeleting && j <= current.length) {
-          element.innerHTML = current.substring(0, j++);
-        } else if (isDeleting && j >= 0) {
-          element.innerHTML = current.substring(0, j--);
-        }
-
-        if (j === current.length) isDeleting = true;
-        if (isDeleting && j === 0) {
-          isDeleting = false;
-          i = (i + 1) % roles.length;
-        }
-      }
-      setTimeout(type, speed);
-    }
-
-    window.onload = type;
-  </script>
 
 </body>
 </html>
